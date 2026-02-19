@@ -309,12 +309,13 @@ PHP_FUNCTION(expect_expectl)
 	struct exp_case *ecases, *ecases_ptr, matchedcase;
 #if PHP_MAJOR_VERSION >= 7
     zval *z_stream, *z_cases, *z_match=NULL, *z_case, *z_value;
+	zend_ulong key;
 #else
 	zval *z_stream, *z_cases, *z_match=NULL, **z_case, **z_value;
+	ulong key;
 #endif
 	php_stream *stream;
 	int fd, argc;
-	ulong key;
 	
 	if (ZEND_NUM_ARGS() < 2 || ZEND_NUM_ARGS() > 3) { WRONG_PARAM_COUNT; }
 
